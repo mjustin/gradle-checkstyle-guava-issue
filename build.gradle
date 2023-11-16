@@ -35,3 +35,10 @@ dependencies {
 checkstyle {
     toolVersion = '10.12.4' // Downgrading to 10.12.1 causes the build to succeed
 }
+
+configurations.checkstyle {
+    // Uncommenting the following capability resolution declaration fixes the issue
+//    resolutionStrategy.capabilitiesResolution.withCapability("com.google.collections:google-collections") {
+//        select("com.google.guava:guava:0")
+//    }
+}
